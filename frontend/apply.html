@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Apply</title>
+    <link rel="stylesheet" href="css/apply.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-box">
+
+        <h2 id="formTitle">Student Application</h2>
+
+        <!-- PERSONAL -->
+        <h3>Personal Information</h3>
+        <input id="firstName" placeholder="First Name">
+        <input id="lastName" placeholder="Last Name">
+
+        <!-- STUDENT -->
+        <div id="studentFields">
+            <h3>Academic Information</h3>
+            <input id="studentClass" placeholder="Class Applying For">
+            <input id="previousSchool" placeholder="Previous School">
+            <input id="previousClass" placeholder="Previous Class">
+        </div>
+
+        <!-- TEACHER -->
+        <div id="teacherFields" style="display:none;">
+            <h3>Professional Information</h3>
+            <input id="subjects" placeholder="Subjects">
+            <input id="qualification" placeholder="Qualification">
+            <input id="experience" placeholder="Experience (years)">
+        </div>
+
+        <!-- CONTACT -->
+        <h3>Contact</h3>
+        <input id="phoneNumber" placeholder="Phone Number">
+        <input id="email" placeholder="Email">
+
+        <!-- PARENT -->
+        <div id="parentFields">
+            <h3>Parent Details</h3>
+            <input id="parentName" placeholder="Parent Name">
+            <input id="parentPhone" placeholder="Parent Phone">
+        </div>
+
+        <!-- ADDRESS -->
+        <h3>Address</h3>
+        <input id="city" placeholder="City">
+        <input id="address" placeholder="Address">
+
+        <!-- BUTTON -->
+        <button id="applyBtn">Submit Application</button>
+
+        <!-- SWITCH -->
+        <p class="switch-text" id="teacherSwitchText">
+            Want to apply as a teacher? 
+            <span id="switchToTeacher">Click here</span>
+        </p>
+
+        <p class="switch-text" id="backToStudent" style="display:none;">
+            Back to <span>Student Application</span>
+        </p>
+
+    </div>
+</div>
+
+<script src="js/apply.js"></script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+/* ================= RESET ================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* ================= BODY ================= */
+
+body{
+
+    background:
+    linear-gradient(
+        135deg,
+        #151521,
+        #1e1e2f
+    );
+
+    color:white;
+
+    min-height:100vh;
+
+    padding:40px;
+}
+
+/* ================= PAGE ================= */
+
+.student-page{
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn{
+
+    background:#ff5c8a;
+
+    border:none;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+    transition:0.25s;
+}
+
+.back-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#ff477e;
+}
+
+/* ================= PROFILE CARD ================= */
+
+.student-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #232336,
+        #1b1b2b
+    );
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+
+    margin-bottom:30px;
+}
+
+/* ================= AVATAR ================= */
+
+.student-avatar{
+
+    width:110px;
+
+    height:110px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff5c8a,
+        #ff7aa2
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+}
+
+/* ================= NAME ================= */
+
+.student-card h1{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+}
+
+.student-role{
+
+    color:#b8b8c7;
+
+    margin-bottom:35px;
+}
+
+/* ================= DETAILS ================= */
+
+.student-details{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+/* ================= DETAIL BOX ================= */
+
+.detail-box{
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:left;
+}
+
+.detail-box span{
+
+    color:#9f9fb3;
+
+    font-size:14px;
+}
+
+.detail-box p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+}
+
+/* ================= ATTENDANCE CARD ================= */
+
+.attendance-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #232336,
+        #1b1b2b
+    );
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+.attendance-card h2{
+
+    margin-bottom:25px;
+}
+
+/* ================= CIRCLE ================= */
+
+.circle{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    margin:20px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    conic-gradient(
+        #ff5c8a 0deg,
+        #444450 0deg
+    );
+
+    position:relative;
+}
+
+.circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#1b1b2b;
+}
+
+.circle span{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:34px;
+
+    font-weight:bold;
+}
+
+/* ================= STATS ================= */
+
+.attendance-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:60px;
+
+    margin-top:30px;
+}
+
+.attendance-stats h3{
+
+    font-size:28px;
+
+    margin-bottom:5px;
+}
+
+.attendance-stats p{
+
+    color:#b8b8c7;
+}
+/* ================= TOP LAYOUT ================= */
+
+.top-layout{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:flex-start;
+}
+
+/* ================= PROFILE CARD ================= */
+
+.student-card{
+
+    flex:2;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.right-side{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+/* ================= HISTORY ================= */
+
+.history-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #232336,
+        #1b1b2b
+    );
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+.history-card h2{
+
+    margin-bottom:20px;
+}
+
+#attendanceHistory{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.history-item{
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border-radius:14px;
+
+    padding:14px;
+
+    color:white;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .top-layout{
+
+        flex-direction:column;
+    }
+}
+/* ================= HISTORY ================= */
+
+#attendanceHistory{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:20px;
+}
+
+.history-item{
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border-radius:16px;
+
+    padding:16px;
+
+    border:1px solid
+    rgba(255,255,255,0.05);
+}
+
+.history-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.history-item strong{
+
+    color:white;
+
+    font-size:15px;
+
+    display:block;
+
+    margin-bottom:4px;
+}
+
+.history-item p{
+
+    color:#b8b8c7;
+
+    font-size:13px;
+}
+
+/* PRESENT */
+
+.present-status{
+
+    background:
+    rgba(34,197,94,0.15);
+
+    color:#22c55e;
+
+    padding:8px 14px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+/* ABSENT */
+
+.absent-status{
+
+    background:
+    rgba(239,68,68,0.15);
+
+    color:#ef4444;
+
+    padding:8px 14px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}

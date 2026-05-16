@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/teacher-dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        EduManage
+
+    </div>
+
+    <div class="sidebar-links">
+
+        <button onclick="goHome()">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </button>
+
+        <button onclick="showView('profile')">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </button>
+
+        <button onclick="showView('attendance')">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Attendance
+
+        </button>
+
+        <button onclick="showView('notices')">
+
+            <i class="fa-solid fa-bell"></i>
+
+            Notices
+
+        </button>
+
+        <button onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <!-- PROFILE VIEW -->
+
+<div id="profileView">
+
+    <div class="profile-card">
+
+        <div class="profile-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+        <h1 id="profileName">
+            Teacher Name
+        </h1>
+
+        <p class="profile-role">
+            Class Teacher
+        </p>
+
+        <div class="profile-details">
+
+            <div class="profile-item">
+
+                <span>Email</span>
+
+                <p id="profileEmail">
+                    -
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <span>Phone</span>
+
+                <p id="profilePhone">
+                    -
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <span>Subject</span>
+
+                <p id="profileSubject">
+                    -
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <span>Assigned Class</span>
+
+                <p id="profileClass">
+                    -
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <span>Qualification</span>
+
+                <p id="profileQualification">
+                    -
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <span>Experience</span>
+
+                <p id="profileExperience">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+        <!-- ATTENDANCE VIEW -->
+
+<div id="attendanceView"
+     style="display:none;">
+
+    <div class="topbar">
+
+        <h1>
+            Mark Attendance
+        </h1>
+
+    </div>
+
+    <div class="attendance-layout">
+
+        <!-- LEFT -->
+
+        <div class="attendance-left">
+
+            <!-- TOP CONTROLS -->
+
+            <div class="attendance-controls">
+
+                <div class="control-box">
+
+                    <label>
+                        Assigned Class
+                    </label>
+
+                    <input
+                        type="text"
+                        id="classDisplay"
+                        readonly
+                    >
+
+                </div>
+
+                <div class="control-box">
+
+                    <label>
+                        Select Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                    >
+
+                </div>
+
+                <button
+                    class="load-btn"
+                    onclick="loadStudents()"
+                >
+
+                    Load Students
+
+                </button>
+
+            </div>
+
+            <!-- TABLE CARD -->
+
+            <div class="attendance-table-card">
+
+                <h2>
+
+                    Students List
+
+                </h2>
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>Roll</th>
+
+                        <th>Name</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="attendanceTable">
+
+                    </tbody>
+
+                </table>
+
+                <button
+                    class="save-btn"
+                    onclick="saveAttendance()"
+                >
+
+                    Save Attendance
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="attendance-right">
+
+            <!-- SUMMARY -->
+
+            <div class="summary-card">
+
+                <h3>
+                    Today's Summary
+                </h3>
+
+                <div class="summary-grid">
+
+                    <div class="summary-box">
+
+                        <h2 id="presentCount">
+                            0
+                        </h2>
+
+                        <p>
+                            Present
+                        </p>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <h2 id="absentCount">
+                            0
+                        </h2>
+
+                        <p>
+                            Absent
+                        </p>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <h2 id="totalCount">
+                            0
+                        </h2>
+
+                        <p>
+                            Students
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PERCENTAGE -->
+
+            <div class="percentage-card">
+
+                <div class="circle">
+
+                    <span id="attendancePercent">
+
+                        0%
+
+                    </span>
+
+                </div>
+
+                <p>
+                    Attendance Percentage
+                </p>
+
+            </div>
+            <!-- HISTORY -->
+
+<div class="history-card">
+
+    <h3>
+        Recent Attendance
+    </h3>
+
+    <div id="attendanceHistory">
+
+        <div class="history-item">
+
+            No attendance records yet
+
+        </div>
+
+    </div>
+
+</div>
+<div class="view-all-wrapper">
+
+    <button
+        class="view-all-btn"
+        onclick="viewAllAttendance()"
+    >
+
+        View All Records
+
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- NOTICE VIEW -->
+
+        <div id="noticesView"
+             style="display:none;">
+
+            <div class="topbar">
+
+                <h1>
+                    Notices
+                </h1>
+
+            </div>
+
+            <div class="notice-card">
+
+                <p>
+                    No notices available.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="./js/teacher-dashboard.js"></script>
+
+</body>
+
+</html>

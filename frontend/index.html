@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Management System</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+
+        <h2>Menu</h2>
+
+        <button id="closeSidebar">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+    <div class="sidebar-links">
+
+        <a href="#">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </a>
+
+        <a href="teacher-login.html">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Attendance
+
+        </a>
+
+        <a href="apply.html">
+
+            <i class="fa-solid fa-file-signature"></i>
+
+            Apply
+
+        </a>
+
+        <a href="#"
+   onclick="openProfile()">
+
+    <i class="fa-solid fa-user"></i>
+
+    Profile
+
+</a>
+
+        <a href="#"
+   onclick="openNotices()">
+
+    <i class="fa-solid fa-bell"></i>
+
+    Notices
+
+</a>
+        <a href="#">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Contact
+
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- ================= OVERLAY ================= -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <!-- LEFT -->
+
+        <div class="nav-left">
+
+            <div class="menu-icon" id="menuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+            <div class="logo">
+                EduManage
+            </div>
+
+        </div>
+
+        <!-- NAV LINKS -->
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="teachers.html">Teachers</a>
+            </li>
+
+            <li>
+                <a href="#apply">Apply</a>
+            </li>
+
+            <li class="login-dropdown">
+
+                <button class="login-btn">
+
+                    Login
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="student-login.html">
+                        Student Login
+                    </a>
+
+                    <a href="teacher-login.html">
+                        Teacher Login
+                    </a>
+
+                    <a href="admin-login.html">
+                        Admin Login
+                    </a>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+<section class="hero">
+
+    <!-- LEFT -->
+
+    <div class="hero-left">
+
+        <p class="hero-tag">
+
+            Smart Digital School Platform
+
+        </p>
+
+        <h1>
+
+            Modern School Management System
+
+        </h1>
+
+        <p class="hero-description">
+
+            A professional platform for managing students,
+            teachers, applications, attendance,
+            and digital school workflows efficiently.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#apply" class="primary-btn">
+
+                Apply Now
+
+            </a>
+
+            <a href="#features" class="secondary-btn">
+
+                Explore Features
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="hero-right">
+
+        <div class="hero-card">
+
+            <div class="card-top">
+
+                <h3>
+
+                    Dashboard Overview
+
+                </h3>
+
+                <span class="live-dot"></span>
+
+            </div>
+
+            <!-- STATS -->
+
+            <div class="mini-stats">
+
+                <!-- STUDENTS -->
+
+                <div class="mini-box">
+
+                    <h2 id="homeStudentCount">
+
+                        0
+
+                    </h2>
+
+                    <p>
+
+                        Students
+
+                    </p>
+
+                </div>
+
+                <!-- TEACHERS -->
+
+                <div class="mini-box">
+
+                    <h2 id="homeTeacherCount">
+
+                        0
+
+                    </h2>
+
+                    <p>
+
+                        Teachers
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- WORKFLOW -->
+
+            <div class="workflow-box">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <span>
+
+                    Digital Workflow System
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- ================= FEATURES SECTION ================= -->
+
+    <section class="features" id="features">
+
+        <div class="section-title">
+
+            <p>Core Features</p>
+
+            <h2>
+                Everything Needed For Modern School Management
+            </h2>
+
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <h3>Student Management</h3>
+
+                <p>
+                    Manage student records, applications,
+                    approvals, class details, and profiles
+                    through a centralized platform.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+                <h3>Teacher Management</h3>
+
+                <p>
+                    Organize teachers, subjects,
+                    qualifications, assigned classes,
+                    and application workflows efficiently.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <h3>Digital Workflow</h3>
+
+                <p>
+                    Simplify school operations through
+                    organized digital processes,
+                    approval systems,
+                    and streamlined workflows.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-building"></i>
+
+                <h3>Centralized Management</h3>
+
+                <p>
+                    Manage students, teachers,
+                    applications, and records
+                    from one centralized system.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <h3>Online / Offline Support</h3>
+
+                <p>
+                    Designed to support both
+                    digital workflows and
+                    traditional school operations
+                    smoothly and efficiently.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-school"></i>
+
+                <h3>Modern Administration</h3>
+
+                <p>
+                    Improve school administration
+                    using modern management tools,
+                    organized workflows,
+                    and responsive interfaces.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PLATFORM SECTION ================= -->
+
+    <section class="platform-section">
+
+        <div class="platform-left">
+
+            <p class="platform-tag">
+                Smart Management Platform
+            </p>
+
+            <h2>
+                Built For Modern School Administration
+            </h2>
+
+            <p class="platform-description">
+
+                The School Management System is designed
+                to simplify administration through
+                centralized management, organized workflows,
+                and modern digital solutions.
+
+                The platform supports both online
+                and traditional school operations
+                while improving efficiency,
+                accessibility, and organization.
+
+            </p>
+
+        </div>
+
+        <div class="platform-right">
+
+            <div class="platform-box">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <div>
+
+                    <h3>Digital Workflow</h3>
+
+                    <p>
+                        Simplified digital processes
+                        for applications,
+                        records, and management.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="platform-box">
+
+                <i class="fa-solid fa-building"></i>
+
+                <div>
+
+                    <h3>Centralized Management</h3>
+
+                    <p>
+                        Manage students,
+                        teachers, records,
+                        and workflows in one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="platform-box">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <div>
+
+                    <h3>Online / Offline Support</h3>
+
+                    <p>
+                        Designed to support
+                        both digital and
+                        traditional school systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="platform-box">
+
+                <i class="fa-solid fa-school"></i>
+
+                <div>
+
+                    <h3>Modern Administration</h3>
+
+                    <p>
+                        Improve school administration
+                        using modern tools
+                        and responsive systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= APPLY SECTION ================= -->
+
+    <section class="apply-section" id="apply">
+
+        <div class="section-title">
+
+            <p>Applications</p>
+
+            <h2>
+                Start Your Journey With EduManage
+            </h2>
+
+        </div>
+
+        <div class="apply-container">
+
+            <div class="apply-card">
+
+                <div class="apply-icon">
+
+                    <i class="fa-solid fa-file-signature"></i>
+
+                </div>
+
+                <h3>Application Portal</h3>
+
+                <p>
+                    Submit applications through our
+                    modern digital platform for both
+                    students and teachers.
+                </p>
+
+                <a href="apply.html" class="apply-btn">
+                    Apply
+                </a>
+
+            </div>
+
+            <div class="apply-card">
+
+                <div class="apply-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+                <h3>Join Our Platform</h3>
+
+                <p>
+                    Access streamlined workflows,
+                    centralized management,
+                    and modern application systems.
+                </p>
+
+                <a href="apply.html" class="apply-btn">
+                    Apply
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h2>EduManage</h2>
+
+                <p>
+                    A modern school management platform
+                    designed for digital workflows,
+                    centralized management,
+                    and modern administration.
+                </p>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Quick Links</h3>
+
+                <a href="#">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="#features">Features</a>
+
+                <a href="teachers.html">Teachers</a>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Platform</h3>
+
+                <a href="apply.html">Apply</a>
+
+                <a href="#">Help</a>
+
+                <a href="#">Settings</a>
+
+                <a href="#">Support</a>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Contact</h3>
+
+                <p>Email: support@edumanage.com</p>
+
+                <p>Phone: +91 9876543210</p>
+
+                <p>Location: India</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 EduManage.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>

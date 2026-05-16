@@ -1,0 +1,119 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    background:#24242b;
+
+    color:white;
+
+    min-height:100vh;
+}
+
+/* ================= PAGE ================= */
+
+.notice-page{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:40px 20px;
+}
+
+/* ================= TOP ================= */
+
+.notice-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.notice-top h1{
+
+    font-size:36px;
+}
+
+.notice-top button{
+
+    background:#353540;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.notice-top button:hover{
+
+    background:#ff5c8a;
+}
+
+/* ================= LIST ================= */
+
+#noticeList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+/* ================= CARD ================= */
+
+.notice-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #353540,
+        #2b2b34
+    );
+
+    border-radius:24px;
+
+    padding:24px;
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+.notice-card h3{
+
+    font-size:22px;
+
+    margin-bottom:14px;
+}
+
+.notice-card p{
+
+    color:#c7c7d3;
+
+    line-height:1.7;
+}

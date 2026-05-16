@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>School</h2>
+        <ul>
+            <li onclick="showView('dashboard')">Dashboard</li>
+            <li onclick="showView('students')">Students</li>
+            <li onclick="showView('teachers')">Teachers</li>
+            <li onclick="showView('notices')">Notices</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- NAVBAR -->
+        <div class="navbar">
+            <h3>Welcome Admin</h3>
+        </div>
+
+        <!-- DASHBOARD -->
+       <div id="dashboardView">
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                Total Students
+            </h3>
+
+            <p id="totalStudents">
+
+                0
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Total Teachers
+            </h3>
+
+            <p id="totalTeachers">
+
+                0
+
+            </p>
+
+        </div>
+
+        <!-- ATTENDANCE -->
+
+        <div class="attendance-summary-card">
+
+            <h3>
+                Today's Attendance
+            </h3>
+
+            <div class="attendance-circle">
+
+                <span id="schoolAttendancePercent">
+
+                    0%
+
+                </span>
+
+            </div>
+
+            <p id="attendanceText">
+
+                0 Present / 0 Students
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <h2>
+        Applications
+    </h2>
+
+    <div id="applications">
+
+    </div>
+
+</div>
+
+<!-- STUDENTS -->
+<div id="studentsView" style="display:none">
+
+    <h2>Students</h2>
+
+    <!-- ADD STUDENT -->
+    <div class="form-box">
+
+    <input
+        id="addName"
+        placeholder="First Name"
+    >
+
+    <input
+        id="addLast"
+        placeholder="Last Name"
+    >
+
+    <!-- CLASS SELECT -->
+
+    <select id="addClass">
+
+        <option value="">
+            Select Class
+        </option>
+
+        <option value="1A">1A</option>
+        <option value="1B">1B</option>
+        <option value="1C">1C</option>
+
+        <option value="2A">2A</option>
+        <option value="2B">2B</option>
+        <option value="2C">2C</option>
+
+        <option value="3A">3A</option>
+        <option value="3B">3B</option>
+        <option value="3C">3C</option>
+
+        <option value="4A">4A</option>
+        <option value="4B">4B</option>
+        <option value="4C">4C</option>
+
+        <option value="5A">5A</option>
+        <option value="5B">5B</option>
+        <option value="5C">5C</option>
+
+        <option value="6A">6A</option>
+        <option value="6B">6B</option>
+        <option value="6C">6C</option>
+
+        <option value="7A">7A</option>
+        <option value="7B">7B</option>
+        <option value="7C">7C</option>
+
+        <option value="8A">8A</option>
+        <option value="8B">8B</option>
+        <option value="8C">8C</option>
+
+        <option value="9A">9A</option>
+        <option value="9B">9B</option>
+        <option value="9C">9C</option>
+
+        <option value="10A">10A</option>
+        <option value="10B">10B</option>
+        <option value="10C">10C</option>
+
+    </select>
+
+    <input
+        id="addRoll"
+        placeholder="Roll"
+    >
+
+    <button onclick="addStudent()">
+
+        Add
+
+    </button>
+
+</div>
+
+    <!-- 🔥 SEARCH -->
+    <input
+        type="text"
+        id="studentSearch"
+        class="search-box"
+        placeholder="Search by name, class or roll..."
+        onkeyup="loadStudents()">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Roll</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable"></tbody>
+    </table>
+</div>
+
+        <!-- TEACHERS -->
+        <div id="teachersView" style="display:none">
+            <h2>Teachers</h2>
+
+            <input
+        type="text"
+        id="teacherSearch"
+        class="search-box"
+        placeholder="Search by name, subject or class..."
+        onkeyup="loadTeachers()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subjects</th>
+                        <th>AssignedClass</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="teacherTable"></tbody>
+            </table>
+        </div>
+        <!-- ================= NOTICES ================= -->
+
+<div
+    id="noticesView"
+    style="display:none;"
+>
+
+    <h2>
+        School Notices
+    </h2>
+
+    <!-- CREATE NOTICE -->
+
+    <div class="notice-form">
+
+        <input
+            type="text"
+            id="noticeTitle"
+            placeholder="Notice Title"
+        >
+
+        <textarea
+            id="noticeMessage"
+            placeholder="Write notice..."
+        ></textarea>
+
+        <button onclick="addNotice()">
+
+            Publish Notice
+
+        </button>
+
+    </div>
+
+    <!-- NOTICE LIST -->
+
+    <div id="noticeList">
+
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" style="display:none;">
+    <div class="modal-box">
+        <div id="modalContent"></div>
+        <button class="close-btn" onclick="closeModal()">
+    Close
+</button>
+    </div>
+</div>
+
+<script src="./js/dashboard.js"></script>
+
+</body>
+</html>

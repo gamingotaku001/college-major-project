@@ -1,0 +1,520 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    background:#24242b;
+
+    color:white;
+
+    overflow-x:hidden;
+}
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:
+    rgba(20,20,28,0.75);
+
+    backdrop-filter:blur(12px);
+
+    z-index:1000;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:white;
+}
+
+/* ================= NAV ================= */
+
+.navbar nav{
+
+    display:flex;
+
+    gap:28px;
+}
+
+.navbar nav a{
+
+    color:#d0d0dc;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+    position:relative;
+}
+
+.navbar nav a:hover{
+
+    color:#ff5c8a;
+}
+
+.navbar nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#ff5c8a;
+
+    transition:0.3s;
+}
+
+.navbar nav a:hover::after{
+
+    width:100%;
+}
+/* =========================================================
+   HERO
+========================================================= */
+
+.about-hero{
+
+    height:55vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1400&auto=format&fit=crop");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.about-overlay h1{
+
+    font-size:64px;
+
+    margin-bottom:20px;
+}
+
+.about-overlay p{
+
+    color:#d0d0dc;
+
+    font-size:20px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story-section{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1.4fr;
+
+    gap:60px;
+
+    padding:100px 8%;
+}
+
+.section-tag{
+
+    color:#ff5c8a;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+.story-left h2{
+
+    font-size:52px;
+
+    line-height:1.2;
+}
+
+.story-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+}
+
+.story-right p{
+
+    color:#c4c4d0;
+
+    line-height:1.9;
+
+    font-size:17px;
+}
+
+blockquote{
+
+    border-left:
+    4px solid #ff5c8a;
+
+    padding-left:20px;
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    color:white;
+}
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.mission-section{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:28px;
+
+    padding:0 8% 100px;
+}
+
+.mission-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #353540,
+        #2b2b34
+    );
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    transition:0.3s;
+}
+
+.mission-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.mission-card i{
+
+    font-size:36px;
+
+    color:#ff5c8a;
+
+    margin-bottom:22px;
+}
+
+.mission-card h3{
+
+    margin-bottom:14px;
+
+    font-size:24px;
+}
+
+.mission-card p{
+
+    color:#c5c5d1;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team-section{
+
+    padding:100px 8%;
+
+    text-align:center;
+}
+
+.team-section h2{
+
+    font-size:48px;
+
+    margin-bottom:16px;
+}
+
+.team-subtitle{
+
+    color:#bdbdca;
+
+    margin-bottom:50px;
+}
+
+.team-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+}
+
+.team-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #353540,
+        #2b2b34
+    );
+
+    border-radius:24px;
+
+    padding:40px;
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+}
+
+.team-card h3{
+
+    margin-bottom:18px;
+
+    font-size:24px;
+}
+
+.team-card p{
+
+    color:#c5c5d1;
+
+    line-height:1.8;
+}
+
+/* =========================================================
+   FUTURE
+========================================================= */
+
+.future-section{
+
+    padding:100px 8%;
+
+    text-align:center;
+}
+
+.future-section h2{
+
+    font-size:48px;
+
+    margin-bottom:24px;
+}
+
+.future-section p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:#c5c5d1;
+
+    line-height:1.9;
+
+    font-size:18px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .story-section{
+
+        grid-template-columns:1fr;
+    }
+
+    .mission-section{
+
+        grid-template-columns:1fr;
+    }
+
+    .about-overlay h1{
+
+        font-size:42px;
+    }
+
+    .story-left h2{
+
+        font-size:38px;
+    }
+
+    .team-section h2,
+    .future-section h2{
+
+        font-size:36px;
+    }
+}
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    background:#1c1c24;
+
+    padding:60px 8%;
+
+    text-align:center;
+
+    border-top:
+    1px solid rgba(255,255,255,0.05);
+}
+
+.footer h2{
+
+    font-size:36px;
+
+    margin-bottom:18px;
+}
+
+.footer p{
+
+    color:#bdbdca;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+/* ================= LINKS ================= */
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:28px;
+
+    margin-bottom:30px;
+}
+
+.footer-links a{
+
+    color:#d0d0dc;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+
+    color:#ff5c8a;
+}
+
+/* ================= COPYRIGHT ================= */
+
+.footer span{
+
+    color:#8e8e99;
+
+    font-size:14px;
+}
+/* =========================================================
+   PREMIUM HOVERS
+========================================================= */
+
+.mission-card,
+.team-card{
+
+    transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.mission-card:hover,
+.team-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ================= SMOOTH SCROLL ================= */
+
+html{
+
+    scroll-behavior:smooth;
+}
